@@ -1,0 +1,28 @@
+{
+    "heroes": [
+        {
+            "id": 1,
+            "nombre": "Spiderman"
+        },
+        {
+            "id": 2,
+            "nombre": "Superman"
+        },
+        {
+            "id": 3,
+            "nombre": "Thor"
+        },
+        {
+            "id": 4,
+            "nombre": "Batman"
+        },
+        {
+            "id": 5,
+            "nombre": "Capitan america"
+        },
+        {
+            "id": 6,
+            "nombre": "Viuda negra"
+        }
+    ]
+}
