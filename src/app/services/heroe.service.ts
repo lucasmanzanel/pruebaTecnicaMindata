@@ -1,9 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { inject, Injectable, Signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment_dev } from '../../environments/environment.development';
 import { HeroeI } from '../interface/heroe.interface';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root',
@@ -28,12 +27,12 @@ export class HeroeService {
     return this._http.put<HeroeI>(this._api + `/${heroe.id}`, heroe);
   }
 
-  deleteHeroe(idHeroe: HeroeI): Observable<HeroeI> {
+  deleteHeroe(idHeroe: number): Observable<HeroeI> {
     return this._http.delete<HeroeI>(this._api + `/${idHeroe}`);
   }
 
   searchHeroe(query: string): Observable<HeroeI[]> {
-    const nameHeroe = new HttpParams().set('name', query);
-    return this._http.get<HeroeI[]>(this._api, { params: nameHeroe });
+    const params = new HttpParams().set('nombre_like', query);
+    return this._http.get<HeroeI[]>(this._api, { params });
   }
 }
