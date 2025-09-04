@@ -1,3 +1,5 @@
+## ACLARACION
+## No se hace enfasis en el diseño sino mas bien en el uso de un store + signals
 # Prueba tecnica frontend - Mindata
 - Se debe utilizar la última versión LTS de Angular y de cualquier librería que se use en el proyecto.
 ## Desarrollar, utilizando Angular, una aplicación SPA que permita hacer un mantenimiento de súper héroes:
