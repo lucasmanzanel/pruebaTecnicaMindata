@@ -32,7 +32,7 @@ describe('HeroeService', () => {
     httpMock.verify();
   });
 
-  it('Servicio creado', () => {
+  it('Debe crearse servicio para llamadas al back', () => {
     expect(service).toBeTruthy();
   });
 
