@@ -72,8 +72,10 @@ export class TablaHeroesComponent {
       width: '400px',
     });
     dialogRef.afterClosed().subscribe((result: HeroeI | null) => {
-      if (result) this.store.addHeroe(result);
-      Swal.fire(`Has agregado a ${result?.nombre}`, '', 'success');
+      if (result) {
+        this.store.addHeroe(result);
+        Swal.fire(`Has agregado a ${result?.nombre}`, '', 'success');
+      }
     });
   }
 
