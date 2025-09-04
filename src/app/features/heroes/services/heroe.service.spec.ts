@@ -5,7 +5,7 @@ import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
-import { HeroeI } from '../interface/heroe.interface';
+import { HeroeI } from '../interfaces/heroe.interface';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('HeroeService', () => {

@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment_dev } from '../../environments/environment.development';
-import { HeroeI } from '../interface/heroe.interface';
+import { HeroeI } from '../interfaces/heroe.interface';
+import { environment_dev } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',

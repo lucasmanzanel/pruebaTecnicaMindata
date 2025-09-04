@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>@if(data?.nombre){ Editar Heroe }@else{ Nuevo Heroe }</h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()">
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      @if(form.controls['nombre'].invalid && form.controls['nombre'].touched){
+      <mat-error> El nombre es requerido </mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Guardar
+    </button>
+  </div>
+</form>
