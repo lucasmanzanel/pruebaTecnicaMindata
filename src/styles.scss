@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@use "sass:math";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$espaciado-base: 1rem;
+$espaciado-sm: math.div($espaciado-base, 2);
+$espaciado-md: $espaciado-base;
+$espaciado-lg: $espaciado-base * 2;
+$espaciado-xl: $espaciado-base * 4;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.container {
+  padding: $espaciado-sm;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    padding: $espaciado-md;
+  }
+
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $espaciado-xl;
+  }
+}
