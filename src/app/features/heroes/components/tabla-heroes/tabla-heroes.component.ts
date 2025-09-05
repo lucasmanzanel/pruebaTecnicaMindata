@@ -59,11 +59,6 @@ export class TablaHeroesComponent {
     return this.filtradoHeroes().slice(start, end);
   });
 
-  setQuery(query: string) {
-    this.query.set(query);
-    this.pageIndex.set(0);
-  }
-
   onPageChange(event: PageEvent) {
     this.pageIndex.set(event.pageIndex);
     this.pageSize.set(event.pageSize);
