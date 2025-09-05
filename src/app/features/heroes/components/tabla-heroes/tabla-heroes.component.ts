@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AgregarHeroeComponent } from '../agregar-heroe/agregar-heroe.component';
 import { HeroeStoreService } from '../../services/heroe-store.service';
 import Swal from 'sweetalert2';
+import { BuscadorComponent } from '../buscador/buscador.component';
 
 @Component({
   selector: 'app-tabla-heroes',
@@ -23,6 +24,7 @@ import Swal from 'sweetalert2';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    BuscadorComponent
   ],
   templateUrl: './tabla-heroes.component.html',
   styleUrl: './tabla-heroes.component.scss',
@@ -34,6 +36,10 @@ export class TablaHeroesComponent {
   private dialog = inject(MatDialog);
   private store = inject(HeroeStoreService);
 
+  query = signal('');
+  pageIndex = signal(0);
+  pageSize = signal(5);
+
   filtradoHeroes = computed(() =>
     this.store
       .heroes()
@@ -41,10 +47,6 @@ export class TablaHeroesComponent {
         h.nombre.toLowerCase().includes(this.query().toLowerCase())
       )
   );
-
-  query = signal('');
-  pageIndex = signal(0);
-  pageSize = signal(5);
 
   allHeroes = toSignal(
     this.heroService.allHeroes().pipe(catchError(() => of([] as HeroeI[]))),
@@ -100,5 +102,10 @@ export class TablaHeroesComponent {
         this.store.deleteHeroe(hero.id);
       }
     });
+  }
+
+    onBuscar(texto: string) {
+    this.query.set(texto);
+    this.pageIndex.set(0);
   }
 }

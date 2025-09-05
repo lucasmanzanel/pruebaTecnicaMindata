@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline" class="buscador">
+  <mat-label>{{ placeholder() }}</mat-label>
+  <input
+    matInput
+    type="text"
+    [value]="valor()"
+    (input)="onInput($any($event.target).value)"
+  />
+</mat-form-field>

@@ -1,18 +1,13 @@
 <div class="tabla-header">
+  <app-buscador
+    [valorInicial]="'Batman'"
+    [placeholder]="'Buscar héroe'"
+    (buscar)="onBuscar($event)"
+  ></app-buscador>
   <button mat-stroked-button (click)="nuevoHeroe()">
     <mat-icon>add</mat-icon>
     Nuevo Héroe
   </button>
-
-  <mat-form-field appearance="outline" class="buscador">
-    <mat-label>Buscar héroe</mat-label>
-    <input
-      matInput
-      type="text"
-      (input)="setQuery($any($event.target).value)"
-      placeholder="Ej: Superman"
-    />
-  </mat-form-field>
 </div>
 
 <table mat-table [dataSource]="paginadoHeroes()" class="mat-elevation-z8">
